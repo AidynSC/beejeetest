@@ -1,8 +1,8 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import {TaskListContext} from '../context/TaskListContext'
 
 const Task = ({task}) => {
-    const { isAuthenticated, findItem, editTask, token } = useContext(TaskListContext)
+    const { isAuthenticated, findItem, editTask, token, editedTasks } = useContext(TaskListContext)
 
     const statusHandler = e => {
         const newStatus = e.target.checked
@@ -18,6 +18,7 @@ const Task = ({task}) => {
                     {task.email}
                 </p>
                 <span className="title">{task.text}</span>
+                <label>{editedTasks.includes(task.id) && 'Отредактировано администратором'}</label>
                 <div className="buttons">
                     {isAuthenticated ? (
                         <label onChange={statusHandler}>

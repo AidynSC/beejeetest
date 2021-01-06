@@ -37,7 +37,6 @@ export const Sorting = () => {
                 </p>
             </form>
             <form action="#" onChange={sortOrderHandler}>
-                {/* <span>Сортировать по</span> */}
                 <p>
                 <label>
                     <input name="group2" value="asd" type="radio" />

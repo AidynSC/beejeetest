@@ -13,5 +13,6 @@ export const TaskListContext = createContext({
     editTask: noop, 
     editItem: noop,
     totalTaskCount: null,
-    changeCurrentPage: noop
+    changeCurrentPage: noop,
+    editedTasks: []
 })

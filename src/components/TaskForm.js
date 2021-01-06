@@ -29,7 +29,7 @@ const TaskForm = () => {
         } 
         if (editItem && token) {
             const data = {
-                text: form.text + ' (отредактировано администратором)', token
+                text: form.text, token
             }
             editTask(editItem.id, data)
             clearForm()

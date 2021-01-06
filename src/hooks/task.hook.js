@@ -13,6 +13,7 @@ export const useTask = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [sortField, setSortField] = useState('id')
     const [sortDirection, setSortDirection] = useState('asc')
+    const [editedTasks, setEditedTasks] = useState([])
 
     const getTasks = useCallback(async () => {
         const fetched = await request('', 'GET', null, '&sort_field=' + sortField + '&sort_direction=' + sortDirection + '&page=' + currentPage)
@@ -46,13 +47,16 @@ export const useTask = () => {
             const response = await request('edit/' + id, 'POST', body)
             setEditItem(null)
             getTasks()
-            if (response.status === 'ok') return message('Задача изменена!')
+            if (response.status === 'ok') {
+                setEditedTasks([...editedTasks, id])
+                return message('Задача изменена!')
+            }
             return message('Что-то пошло не так')
         } else {
             return message('Авторизуйтесь')
         }
        
-    }, [request, getTasks, checkAuth, message])
+    }, [request, getTasks, checkAuth, message, setEditedTasks, editedTasks])
 
 
     const changeCurrentPage = useCallback(pageNumber => {
@@ -76,5 +80,5 @@ export const useTask = () => {
         fetchData()
     }, [getTasks, addTask, editTask, changeCurrentPage])
 
-    return { tasks, addTask, findItem, editItem, editTask, totalTaskCount, changeCurrentPage, sortTasksByValue, sortTasksByOrder }
+    return { tasks, addTask, findItem, editItem, editTask, totalTaskCount, changeCurrentPage, sortTasksByValue, sortTasksByOrder, editedTasks }
 }

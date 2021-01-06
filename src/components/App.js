@@ -10,12 +10,12 @@ import 'materialize-css'
 
 function App() {
   const { token, login, logout } = useAuth()
-  const { tasks, addTask, findItem, editTask, editItem, totalTaskCount, changeCurrentPage, sortTasksByValue, sortTasksByOrder } = useTask()
+  const { tasks, addTask, findItem, editTask, editItem, totalTaskCount, changeCurrentPage, sortTasksByValue, sortTasksByOrder, editedTasks } = useTask()
   const isAuthenticated = !!token
   
   return (
     <TaskListContext.Provider value={{
-      token, login, logout, isAuthenticated, tasks, addTask, findItem, editTask, editItem, totalTaskCount, changeCurrentPage, sortTasksByValue, sortTasksByOrder
+      token, login, logout, isAuthenticated, tasks, addTask, findItem, editTask, editItem, totalTaskCount, changeCurrentPage, sortTasksByValue, sortTasksByOrder, editedTasks
     }}>
       <Router>
         <Navbar />
