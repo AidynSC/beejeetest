@@ -18,30 +18,28 @@ const Task = ({task}) => {
                     {task.email}
                 </p>
                 <span className="title">{task.text}</span>
-        
-                {isAuthenticated ? (
-                    <label onChange={statusHandler}>
-                        {task.status === 10 ? (
-                            <input type="checkbox" className="filled-in" defaultChecked="checked"/>
-                        ) : (
-                            <input type="checkbox" className="filled-in" />
-                        )}    
-                    <span>Завершено</span>
-                    </label>
-                ) : (
-                    <a href="#!" className="secondary-content">
-                        <i className="material-icons">{task.status === 10 ? 'check' : 'close'}</i>
-                    </a>
-                )}
+                <div className="buttons">
+                    {isAuthenticated ? (
+                        <label onChange={statusHandler}>
+                            {task.status === 10 ? (
+                                <input type="checkbox" className="filled-in" defaultChecked="checked"/>
+                            ) : (
+                                <input type="checkbox" className="filled-in" />
+                            )}    
+                        <span>Завершено</span>
+                        </label>
+                    ) : (
+                        <a href="#!" className="secondary-content">
+                            <i className="material-icons">{task.status === 10 ? 'check' : 'close'}</i>
+                        </a>
+                    )}
 
-                {isAuthenticated && (
-                    <div>
-                        <button onClick={() => findItem(task.id)} className="btn">
+                    {isAuthenticated && (
+                        <a href="#!" onClick={() => findItem(task.id)} className="secondary-content">
                             <i className="material-icons">edit</i>
-                        </button>
-                    </div>
-                )}
-                
+                        </a>
+                    )}
+                </div>
         </li>
     )
 }

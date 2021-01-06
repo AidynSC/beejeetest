@@ -9,3 +9,13 @@
 .sorting {
   display: flex;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form {
+  margin: 10px;
+}

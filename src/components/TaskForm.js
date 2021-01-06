@@ -90,7 +90,7 @@ const TaskForm = () => {
                         required
                     />
 
-                    <div className="buttons">
+                    <div>
                         <button type="submit" className="btn">
                             {editItem ? 'Изменить' : 'Добавить' }
                         </button>

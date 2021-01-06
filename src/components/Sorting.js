@@ -15,8 +15,8 @@ export const Sorting = () => {
 
     return (
         <div className="sorting">
+            <span>Сортировать по</span>
             <form action="#" onChange={sortValueHandler}>
-                <span>Сортировать по</span>
                 <p>
                 <label>
                     <input name="group1" value="username" type="radio" />
@@ -37,7 +37,7 @@ export const Sorting = () => {
                 </p>
             </form>
             <form action="#" onChange={sortOrderHandler}>
-                <span>Сортировать по</span>
+                {/* <span>Сортировать по</span> */}
                 <p>
                 <label>
                     <input name="group2" value="asd" type="radio" />
