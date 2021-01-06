@@ -92,10 +92,10 @@ const TaskForm = () => {
 
                     <div className="buttons">
                         <button type="submit" className="btn">
-                            {editItem ? 'Edit Task' : 'Add Task' }
+                            {editItem ? 'Изменить' : 'Добавить' }
                         </button>
                         <button onClick={clearForm} className="btn">
-                            Clear
+                            Очистить
                         </button>
                     </div>
                 </div>

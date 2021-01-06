@@ -19,7 +19,7 @@ const TaskList = () => {
                 })}
             </ul>
             ) : (
-                <div className="no-tasks">No Tasks</div>
+                <div className="no-tasks">Задач нет</div>
             )}
         </div>
     )

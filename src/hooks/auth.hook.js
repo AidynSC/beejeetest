@@ -30,11 +30,6 @@ export const useAuth = () => {
     useEffect(() => {
         const token = checkAuth()
         if (token) login(token)
-        // const data = JSON.parse(localStorage.getItem(storageName))
-
-        // if (data && data.token) {
-        //     login(data.token)
-        // }
     }, [login, checkAuth])
 
     return { login, logout, token, checkAuth }

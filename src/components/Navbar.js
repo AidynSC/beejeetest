@@ -15,7 +15,7 @@ const Navbar = () => {
             <NavLink className="brand-logo" to="/">Задачник</NavLink>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 {isAuthenticated ? (
-                    <li><a href="/" onClick={logoutHandler}>Log Out</a></li>
+                    <li><a href="/" onClick={logoutHandler}>Выйти</a></li>
                 ) : (
                     <li><NavLink to="/login">Login</NavLink></li>
                 )}
