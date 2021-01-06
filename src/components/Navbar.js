@@ -12,12 +12,12 @@ const Navbar = () => {
     return (
         <nav>
             <div className="nav-wrapper">
-            <NavLink className="brand-logo" to="/">Задачник</NavLink>
+            <NavLink className="brand-logo" to="/"><span>Задачник</span></NavLink>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 {isAuthenticated ? (
                     <li><a href="/" onClick={logoutHandler}>Выйти</a></li>
                 ) : (
-                    <li><NavLink to="/login">Login</NavLink></li>
+                    <li><NavLink to="/login"><span>Login</span></NavLink></li>
                 )}
             </ul>
             </div>
